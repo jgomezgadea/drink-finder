@@ -13,13 +13,13 @@ const AppFrame: FC<Props> = ({children}) => {
     <Grid container justifyContent="center">
       <AppBar className="appBar" position="static">
         <Toolbar variant="regular">
-          <LocalBar fontSize="large" />
+          <LocalBar color="secondary" fontSize="large" />
           <Typography color="inherit" variant="h4">
             &nbsp;Drink Finder
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid item lg={8} md={10} xs={11}>
+      <Grid item md={11}>
         {children}
       </Grid>
     </Grid>

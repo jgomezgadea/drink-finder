@@ -16,9 +16,12 @@ const DrinkList = () => {
   return (
     <div className="drinkList">
       {state.drinks.length ? (
-        state.drinks.map(drink => <DrinkItem drink={drink} key={drink.idDrink} />)
+        state.drinks
+          // Filter by alcoholic / non alcoholic
+          //.filter(drink => drink.strAlcoholic.toLowerCase().includes(state.searchTerm.toLowerCase()))
+          .map(drink => <DrinkItem drink={drink} key={drink.idDrink} />)
       ) : (
-        <h3>No matching drink found!</h3>
+        <h3 className="noDrinks">No matching drink found!</h3>
       )}
     </div>
   );

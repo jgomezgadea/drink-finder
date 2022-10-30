@@ -1,5 +1,5 @@
 import SearchBar from 'material-ui-search-bar';
-import React, {FC, useEffect} from 'react';
+import React, {FC, useMemo} from 'react';
 import {useDispatch} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -13,13 +13,16 @@ const SearchDrinksBar: FC = () => {
   const dispatch = useDispatch();
   const {setDrinks} = bindActionCreators(actionCreators, dispatch);
 
-  useEffect(() => {
+  useMemo(() => {
     useFetchDrinks(findTerm, setDrinks);
   }, [findTerm, setDrinks]);
 
   return (
     <SearchBar
-      onCancelSearch={() => setFindTerm('')}
+      onCancelSearch={() => {
+        setSearchTerm('');
+        setFindTerm('');
+      }}
       onChange={t => setSearchTerm(t)}
       onRequestSearch={() => setFindTerm(searchTerm)}
       placeholder="Search for a drink ..."

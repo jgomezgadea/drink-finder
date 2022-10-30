@@ -11,9 +11,16 @@ export interface Drink {
   strGlass: string;
   strCategory: string;
   strInstructions: string;
-  strIngredients: [string];
+  strIngredients: string[];
 }
 
 export interface DrinkDispatch {
   fetchDrinks: (searchTerm: string) => void;
+}
+
+export interface FiltersState {
+  alcoholic: boolean;
+  ingredient: string[];
+  category: string[];
+  glass: string[];
 }

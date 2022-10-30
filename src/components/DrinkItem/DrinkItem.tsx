@@ -17,7 +17,7 @@ const DrinkItem = ({drink}: {drink: Drink}) => {
           <hr></hr>
           <h4>Ingredients</h4>
           <ul>
-            {drink.strIngredients.map(ingredient => (
+            {Array.from(new Set(drink.strIngredients)).map(ingredient => (
               <li key={ingredient}>{ingredient}</li>
             ))}
           </ul>
@@ -33,7 +33,7 @@ const DrinkItem = ({drink}: {drink: Drink}) => {
           <img alt={drink.strDrink} src={drink.strDrinkThumb} />
           <h4>Ingredients</h4>
           <ul>
-            {drink.strIngredients.map(ingredient => (
+            {Array.from(new Set(drink.strIngredients)).map(ingredient => (
               <li key={ingredient}>{ingredient}</li>
             ))}
           </ul>

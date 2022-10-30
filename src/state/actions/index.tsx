@@ -1,10 +1,11 @@
-import {DrinkState} from '../interfaces';
+import {DrinkState, FiltersState} from '../interfaces';
 
 /**
  * Enum for the action types
  */
 export enum ActionTypes {
   SET_DRINKS = 'SET_DRINKS',
+  SET_FILTERS = 'SET_FILTERS',
 }
 
 /**
@@ -15,4 +16,9 @@ interface SetDrinksAction {
   payload: DrinkState;
 }
 
-export type Action = SetDrinksAction; // | AddOtherAction
+interface SetFiltersAction {
+  type: ActionTypes.SET_FILTERS;
+  payload: FiltersState;
+}
+
+export type Action = SetDrinksAction | SetFiltersAction;

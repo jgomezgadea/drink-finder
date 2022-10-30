@@ -1,0 +1,10 @@
+.drinkFilter {
+    color-scheme: white;
+    align-items: left;
+    margin: 10px;
+    margin-left: 10px;
+}
+
+.drinkFilter .checkbox {
+    margin-left: 10%;
+}
