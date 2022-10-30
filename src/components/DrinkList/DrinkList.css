@@ -1,0 +1,10 @@
+.drinkList {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.drinkList h3 {
+    color: rgb(255, 255, 255);
+}

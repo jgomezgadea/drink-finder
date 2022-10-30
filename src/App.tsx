@@ -5,7 +5,11 @@ import {FC} from 'react';
 import DrinkFinder from './pages/DrinkFinder';
 
 const App: FC = () => {
-  return <DrinkFinder />;
+  return (
+    <main className="App">
+      <DrinkFinder />;
+    </main>
+  );
 };
 
 export default App;

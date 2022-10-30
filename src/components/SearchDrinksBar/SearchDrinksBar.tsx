@@ -1,10 +1,10 @@
 import SearchBar from 'material-ui-search-bar';
 import React, {FC, useEffect} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import useFetchDrinks from '../../hooks/useFetchDrinks';
-import {actionCreators, State} from '../../state';
+import {actionCreators} from '../../state';
 
 const SearchDrinksBar: FC = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
@@ -17,10 +17,9 @@ const SearchDrinksBar: FC = () => {
     useFetchDrinks(findTerm, setDrinks);
   }, [findTerm, setDrinks]);
 
-  const state = useSelector((state: State) => state.drinks);
-
   return (
     <SearchBar
+      onCancelSearch={() => setFindTerm('')}
       onChange={t => setSearchTerm(t)}
       onRequestSearch={() => setFindTerm(searchTerm)}
       placeholder="Search for a drink ..."

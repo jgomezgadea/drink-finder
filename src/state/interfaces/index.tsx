@@ -1,5 +1,6 @@
 export interface DrinkState {
   drinks: Drink[];
+  searchTerm: string;
 }
 
 export interface Drink {
@@ -8,6 +9,7 @@ export interface Drink {
   strDrinkThumb: string;
   strAlcoholic: string;
   strGlass: string;
+  strCategory: string;
   strInstructions: string;
   strIngredients: [string];
 }

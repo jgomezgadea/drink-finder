@@ -1,4 +1,4 @@
-import {Drink} from '../interfaces';
+import {DrinkState} from '../interfaces';
 
 /**
  * Enum for the action types
@@ -12,7 +12,7 @@ export enum ActionTypes {
  */
 interface SetDrinksAction {
   type: ActionTypes.SET_DRINKS;
-  payload: Drink[];
+  payload: DrinkState;
 }
 
 export type Action = SetDrinksAction; // | AddOtherAction

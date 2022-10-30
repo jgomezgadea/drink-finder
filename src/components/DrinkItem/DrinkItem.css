@@ -1,0 +1,84 @@
+.cardDrink {
+    width: 100%;
+    max-width: 340px;
+    margin: 10px;
+    cursor: pointer;
+    border-color: rgb(189, 185, 179);
+    height: 100%;
+}
+
+.cardDrink .media {
+    height: 250px;
+    background-position: center 30%;
+    background-size: 100%;
+    background-color: rgb(180, 100, 0);
+}
+
+.cardDrink .content {
+    padding: 10px;
+    background-color: rgb(189, 185, 179);
+}
+
+.cardDrink h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 10px;
+}
+
+.cardDrink h4 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+}
+
+.cardDrink ul {
+    padding: 0 30px;
+    list-style: none;
+    margin: 5px;
+}
+
+.cardDrink li {
+    padding: 0 30px
+}
+
+.modal {
+    margin: 15%;
+    margin-top: 5%;
+    border: 2px solid rgb(182, 175, 175);
+    background-color: rgb(189, 185, 179);
+    overflow: auto;
+    height: 80%;
+}
+
+.modal h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 10px;
+}
+
+.modal img {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.modal h4 {
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+.modal ul {
+    padding-left: 50px;
+    margin: 5px;
+}
+
+.modal p {
+    text-align: left;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
