@@ -5,6 +5,12 @@
     margin-left: 30px;
 }
 
-/*.drinkFilter .checkbox {
-    margin-left: 10%;
-}*/
+.drinkFilter .checkboxList {
+    margin-left: 10px;
+}
+
+.paper {
+    max-height: 300;
+    overflow: auto;
+    min-width: min-content;
+}

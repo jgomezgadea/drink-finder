@@ -2,7 +2,7 @@ import {Action, ActionTypes} from '../actions';
 import {FiltersState} from '../interfaces';
 
 const initialState = {
-  alcoholic: false,
+  alcoholic: true,
   ingredient: [],
   category: [],
   glass: [],

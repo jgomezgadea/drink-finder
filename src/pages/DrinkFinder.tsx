@@ -17,10 +17,10 @@ const DrinkFinder: FC = () => {
         </Grid>
       </Grid>
       <Grid alignItems="flex-start" container justifyContent="center">
-        <Grid item lg={2} md={2} sm={3} xs={4}>
+        <Grid item lg={2} md={3} sm={4} xs={5}>
           <DrinkFilter />
         </Grid>
-        <Grid item lg={10} md={10} sm={9} xs={8}>
+        <Grid item lg={10} md={9} sm={8} xs={7}>
           <DrinkList />
         </Grid>
       </Grid>
