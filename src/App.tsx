@@ -1,5 +1,3 @@
-import './App.css';
-
 import {createTheme, ThemeProvider} from '@material-ui/core';
 import {FC} from 'react';
 
@@ -17,9 +15,7 @@ const darkTheme = createTheme({
 const App: FC = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <main className="App">
-        <DrinkFinder />;
-      </main>
+        <DrinkFinder />
     </ThemeProvider>
   );
 };

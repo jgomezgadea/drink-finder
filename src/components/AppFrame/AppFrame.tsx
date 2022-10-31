@@ -10,7 +10,7 @@ type Props = {
 
 const AppFrame: FC<Props> = ({children}) => {
   return (
-    <Grid container justifyContent="center">
+    <>
       <AppBar className="appBar" position="static">
         <Toolbar variant="regular">
           <LocalBar color="secondary" fontSize="large" />
@@ -19,10 +19,10 @@ const AppFrame: FC<Props> = ({children}) => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid item md={11}>
+      <div className='children'>
         {children}
-      </Grid>
-    </Grid>
+      </div>
+    </>
   );
 };
 
