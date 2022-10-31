@@ -15,7 +15,7 @@ const darkTheme = createTheme({
 const App: FC = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-        <DrinkFinder />
+      <DrinkFinder />
     </ThemeProvider>
   );
 };

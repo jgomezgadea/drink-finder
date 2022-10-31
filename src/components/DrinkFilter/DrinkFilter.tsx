@@ -1,7 +1,7 @@
 import './DrinkFilter.css';
 
-import {Checkbox, FormControl, FormControlLabel, FormGroup, Paper} from '@material-ui/core';
-import React, {useEffect, useMemo, useState} from 'react';
+import {Checkbox, FormControlLabel, FormGroup, Paper} from '@material-ui/core';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -56,10 +56,9 @@ const DrinkFilter = () => {
       ingredient: ingredientsFilter,
       category: categoryFilter,
       glass: glassFilter,
-    } as FiltersState)
-    console.log(ingredientsFilter)
-  }, [alcoholicFilter, ingredientsFilter,
-    categoryFilter, glassFilter, setFilters]);
+    } as FiltersState);
+    console.log(ingredientsFilter);
+  }, [alcoholicFilter, ingredientsFilter, categoryFilter, glassFilter, setFilters]);
 
   useEffect(() => {
     let ingredients: string[] = [];
@@ -70,16 +69,16 @@ const DrinkFilter = () => {
       category = [...category, drink.strCategory];
       glass = [...glass, drink.strGlass];
     });
-    setIngredients(Array.from(new Set(ingredients)))
-    setCategory(Array.from(new Set(category)))
-    setGlass(Array.from(new Set(glass)))
+    setIngredients(Array.from(new Set(ingredients)));
+    setCategory(Array.from(new Set(category)));
+    setGlass(Array.from(new Set(glass)));
     setAlcoholicFilter(true);
     setIngredientsFilter([]);
     setCategoryFilter([]);
     setGlassFilter([]);
-  }, [state.searchTerm]);
+  }, [state.searchTerm, state.drinks.length]);
 
-  return ((state.drinks.length === 0) ? null : (
+  return state.drinks.length === 0 ? null : (
     <div className="drinkFilter">
       <h2>Filters</h2>
       <FormGroup>
@@ -92,39 +91,48 @@ const DrinkFilter = () => {
         </Paper>
       </FormGroup>
       <h4>Ingredients</h4>
-      <Paper className='paper' style={{ maxHeight: 250, overflow: 'auto', minWidth: "min-content" }}>
+      <Paper className="paper" style={{maxHeight: 250, overflow: 'auto', minWidth: 'min-content'}}>
         <FormGroup>
           {ingredients.map(ingredient => (
-          <FormControlLabel key={ingredient}
-            control={<Checkbox onChange={(e) => handleIngredients(e, ingredient)} />}
-            label={ingredient} className="checkboxList" />
-        ))}
+            <FormControlLabel
+              className="checkboxList"
+              control={<Checkbox onChange={e => handleIngredients(e, ingredient)} />}
+              key={ingredient}
+              label={ingredient}
+            />
+          ))}
         </FormGroup>
       </Paper>
-      
+
       <h4>Category</h4>
-      <Paper className='paper' style={{ maxHeight: 250, overflow: 'auto', minWidth: "min-content" }}>
+      <Paper className="paper" style={{maxHeight: 250, overflow: 'auto', minWidth: 'min-content'}}>
         <FormGroup>
           {category.map(cat => (
-          <FormControlLabel key={cat}
-            control={<Checkbox onChange={(e) => handleCategory(e, cat)} />}
-            label={cat} className="checkboxList" />
-        ))}
+            <FormControlLabel
+              className="checkboxList"
+              control={<Checkbox onChange={e => handleCategory(e, cat)} />}
+              key={cat}
+              label={cat}
+            />
+          ))}
         </FormGroup>
       </Paper>
-      
+
       <h4>Glass</h4>
-      <Paper className='paper' style={{ maxHeight: 250, overflow: 'auto', minWidth: "min-content" }}>
+      <Paper className="paper" style={{maxHeight: 250, overflow: 'auto', minWidth: 'min-content'}}>
         <FormGroup>
           {glass.map(gl => (
-          <FormControlLabel key={gl}
-            control={<Checkbox onChange={(e) => handleGlass(e, gl)} />}
-            label={gl} className="checkboxList" />
-        ))}
+            <FormControlLabel
+              className="checkboxList"
+              control={<Checkbox onChange={e => handleGlass(e, gl)} />}
+              key={gl}
+              label={gl}
+            />
+          ))}
         </FormGroup>
       </Paper>
     </div>
-  ));
+  );
 };
 
 export default DrinkFilter;

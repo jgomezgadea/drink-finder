@@ -1,6 +1,6 @@
 import './AppFrame.css';
 
-import {AppBar, Grid, Toolbar, Typography} from '@material-ui/core';
+import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import {LocalBar} from '@material-ui/icons';
 import React, {FC} from 'react';
 
@@ -19,9 +19,7 @@ const AppFrame: FC<Props> = ({children}) => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <div className='children'>
-        {children}
-      </div>
+      <div className="children">{children}</div>
     </>
   );
 };

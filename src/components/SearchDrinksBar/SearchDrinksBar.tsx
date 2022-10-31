@@ -11,7 +11,7 @@ const SearchDrinksBar: FC = () => {
   const [findTerm, setFindTerm] = React.useState('');
 
   const dispatch = useDispatch();
-  const {setDrinks, setFilters} = bindActionCreators(actionCreators, dispatch);
+  const {setDrinks} = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
     useFetchDrinks(findTerm, setDrinks);
