@@ -1,0 +1,14 @@
+---
+version: '3.7'
+
+services:
+  drink_finder:
+    image: node:14.19.1-alpine3.15
+    restart: always
+    volumes:
+      - type: bind
+        source: ./
+        target: /data
+    command: "yarn install && yarn start"
+    network_mode: host
+    working_dir: /data
