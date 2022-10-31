@@ -25,6 +25,12 @@ Open a browser on localhost:3000
 yarn install && yarn start
 ```
 
+### Run deployment version
+- After running locally...
+```sh
+yarn build && yarn serve
+```
+
 ## How it works
 
 You can search the drink that you want using the search bar, and filter the results depending on the ingredients, the category of the drink and the required glass.
